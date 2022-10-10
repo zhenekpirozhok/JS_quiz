@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Регистрация</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
+    </head>
+    <body>
+        <div class="form-container">
+            <form class="registration" onsubmit="return register()" action="index_alt.html">
+                <caption><h5>Зарегистрируйтесь!</h5></caption>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required autocomplete="off"/>
+                <label for="surname">Фамилия:</label>
+                <input type="text" id="surname" name="surname" required autocomplete="off"/>
+                <label for="group">Группа:</label>
+                <input type="text" id="group" name="group" placeholder="9К9341" required autocomplete="off"/>
+                <input type="submit" value="Начать тест"/>
+            </form>
+        </div>
+        <script src="core.js"></script>
+    </body>
+</html>

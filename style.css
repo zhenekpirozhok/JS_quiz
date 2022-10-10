@@ -1,0 +1,240 @@
+:root {
+    --background: #27272c;
+    --background-darker: #1d1d20;
+    --primary: #ab79d6;
+    --secondary: #d367c1;
+    --basic: #c5c5ce;
+    --blue: #00bbcb;
+    --gradient: var(--secondary) 10%,
+    #dedf40 25%,
+    #62cb5c 50%,
+    var(--blue) 75%,
+    var(--primary) 90%;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    background-color: var(--background);
+    color: var(--basic);
+}
+  
+h1, h5 {
+    font-family: Merriweather, serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 46px;
+    color: var(--primary);
+}
+
+h5 {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.wrongAnswRef {
+    display: inline;
+    color: var(--secondary);
+}
+
+pre {
+    color: var(--blue);
+}
+
+.header, .registration {
+    text-align: center;
+    --gradient-angle: 35deg;
+    border-image: linear-gradient(var(--gradient-angle,to bottom),var(--gradient)) 1;
+    border-style: solid;
+    border-width: 8px;
+    padding: 20px 0 20px 0;
+}
+
+.registration {
+    grid-area: 2 / 2;
+    font-size: 25px;
+    display: grid;
+    grid-template-rows: 2fr repeat(3, 0.3fr 1fr) 2fr;
+    place-items: center center;
+}
+
+.form-container {
+    height: 97vh;
+    width: 97vw;
+    display: grid;
+    grid-template-columns: 30% auto 30%;
+    grid-template-rows: 15% auto 15%;
+}
+
+.registration h5 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    color: var(--basic);
+    margin: 0;
+}
+
+.registration input[type="text"] {
+    width: 90%;
+} 
+
+.registration label {
+    place-self: end start;
+    font-size: .9rem;
+    padding-left: 3em;
+}
+
+.header h5 {
+    color: var(--basic);
+    font-weight: 400;
+}
+
+.response-form {
+    margin: 0;
+    margin-top: 20px;
+    padding: 20px;
+    border-style: none;
+    display: block;
+}
+
+#questionsContainer {
+    padding: 20px;
+}
+
+div {
+    display: block;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+.radio {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: var(--basic);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--basic);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.radio::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary);
+}
+
+.radio:checked::before {
+    transform: scale(1);
+}
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+label:has(.radio, input[type="checkbox"]) {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    align-items: center;
+    line-height: 2.3;
+    cursor: pointer;
+    transition: background-color 0.7s;
+}
+
+label:has(.radio, input[type="checkbox"]):hover {
+    background-color: var(--background-darker);
+    border-radius: 0.35em;
+}
+
+input[type="text"] {
+    background-color: var(--background-darker);
+    border: 2px solid;
+    border-radius: 4px;
+    color: var(--basic);
+    font: inherit;
+    padding: 0 0.5em;
+    width: 170px;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--primary);
+}
+
+select {
+    background-color: var(--background-darker);
+    border: 2px solid;
+    border-radius: 4px;
+    color: var(--basic);
+    font: inherit;
+    padding: 0 0.5em;
+    width: 70%;
+}
+
+input[type="submit"], button {
+    align-items: center;
+    background-color: var(--primary);
+    border: 2px solid transparent;
+    border-radius: 0.5em;
+    color: #251235;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 0.5em;
+    justify-content: center;
+    line-height: calc(4px + 2ex);
+    min-width: 10ch;
+    padding: 0.55em 0.75em 0.5em;
+    text-align: center;
+    text-decoration: none;
+    transition: none .18s ease-in-out;
+    transition-property: background-color,color,border-color;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #251235;
+    color: var(--primary);
+    border-color: var(--basic);
+}
